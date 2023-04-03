@@ -5,7 +5,7 @@ export interface ModelType {
         e: THREE.Mesh;
         item: ModelConfig;
     }>[];
-    load: (idx: number, callback: Fn<any>) => void;
+    load: (idx: number, callback?: Fn<any>) => void;
     loadModel: (url: string, sceneidx: number, callback: FnTwoParams<THREE.Group, THREE.AnimationClip[], unknown>) => void;
     loadFbxModel: (url: string, sceneidx: number, callback: FnTwoParams<THREE.Group, THREE.AnimationClip[], unknown>) => void;
     playAllClipes: (idx: number) => void;

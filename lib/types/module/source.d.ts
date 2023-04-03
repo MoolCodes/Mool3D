@@ -1,4 +1,4 @@
-export interface loadTextureParams {
+interface loadTextureParams {
     path: string;
     onLoad?: Fn<any>;
     onProgress?: Fn<any>;
@@ -8,3 +8,4 @@ export interface SourceType {
     loadTexture: FnParamsReturn<loadTextureParams, any>;
 }
 export type ViewerSource = SourceType;
+export {};
