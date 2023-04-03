@@ -1,0 +1,31 @@
+import { ViewerType, ViewerParams, SpriteParams, ParadeParams, InitWaterParams } from "./types/types";
+import { Params } from "./plugins/params";
+export declare class Viewer extends Params implements ViewerType {
+    constructor(options: ViewerParams);
+    private createScene;
+    private initAnimate;
+    initSky(): void;
+    initEnvironment(environment: EnvironmentType): void;
+    initEvent(types: EventTypes[]): void;
+    private initRender;
+    private initControls;
+    initModel(): void;
+    private initAmbient;
+    initSkyLight(skyColor: string, earthColor: string, intensity: number): void;
+    initDirectional(color: string, intensity: number): void;
+    initPointLight(color: string, intensity: number, distance: number, decay?: number): number;
+    initSpotLight(color: string, intensity: number, distance: number, target?: THREE.Vector3): void;
+    initRectArea(color: string, width: number, height: number, intensity: number): void;
+    initRectAreaBox(color: string, width: number, intensity: number, position: [number, number, number]): void;
+    initFog(): void;
+    initWater(options: InitWaterParams): void;
+    initSource(): void;
+    loadSprite({ texture, name }: SpriteParams): THREE.Object3D;
+    initParade(params: ParadeParams): void;
+    initParticleEngine(particle: ParticleEngineType, mugen: boolean): ParticleEngineType;
+    getParticleTween(times: number[], values: number[]): ParticleTween;
+    setParticleMode(particle: ParticleEngineType, key: ParticleKeys, ParticleExamplesParams: ParticleExamplesParams): void;
+    setScene(index: number, callback: Fn<any>): void;
+    flyTo(option: FlyToParams): void;
+    destroy(): void;
+}
