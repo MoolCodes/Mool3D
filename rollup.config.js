@@ -8,8 +8,8 @@ export default {
   output: {
     file: "./lib/index.js", // 出口文件
     name: "index", // 出口文件
-    format: "umd", // 输出的模块语法格式
+    format: "es", // 输出的模块语法格式
   },
-  plugins: [babel({ babelHelpers: "bundled" }), ts(), resolve(), commonjs()],
+  plugins: [ts(), resolve(), commonjs()],
   external: ["three", "axios", "@types/three"],
 };
