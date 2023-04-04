@@ -81,9 +81,10 @@ export class Sky implements SkyType {
       this.gScenes[this.sceneidx].remove(this.gSkyBox[this.sceneidx]);
     }
     const sky = new SkyShader();
-    this.sky = sky;
-    (sky as any).scale.setScalar(option.scale);
-    this.gScenes[this.sceneidx].add(sky);
+    let mesh = new Mesh(new BoxGeometry(1, 1, 1), sky.material);
+    (mesh as any).scale.setScalar(option.scale);
+    this.gScenes[this.sceneidx].add(mesh);
+    this.sky = mesh;
     const skyUniforms = (sky as any).material.uniforms;
     skyUniforms["turbidity"].value = option.turbidity; //浑浊度
     skyUniforms["rayleigh"].value = option.rayleigh; //散射

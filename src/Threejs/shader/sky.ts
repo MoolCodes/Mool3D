@@ -5,6 +5,7 @@ import {
   ShaderMaterial,
   UniformsUtils,
   Vector3,
+  MeshBasicMaterial,
 } from "three";
 
 /**
@@ -21,11 +22,11 @@ import {
  * Three.js integration by zz85 http://twitter.com/blurspline
  */
 
-class Sky extends Mesh {
+class Sky {
   isSky: boolean;
+  material: any;
   constructor() {
     const shader = (Sky as any).SkyShader;
-
     const material = new ShaderMaterial({
       name: "SkyShader",
       fragmentShader: shader.fragmentShader,
@@ -34,9 +35,9 @@ class Sky extends Mesh {
       side: BackSide,
       depthWrite: false,
     });
-
-    super(new BoxGeometry(1, 1, 1), material);
-
+    // let box = new BoxGeometry(1, 1, 1);
+    // super(box, material);
+    this.material = material;
     this.isSky = true;
   }
 }

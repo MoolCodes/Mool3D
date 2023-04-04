@@ -1,7 +1,7 @@
 import { Group, RectAreaLight } from "three";
 import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
 import { RectAreaType } from "../../types/types";
-import { RectAreaLightUniformsLib } from "../lights/rectlib";
+import { RectAreaLightUniformsLib } from "./rectlib";
 export class RectArea implements RectAreaType {
   private scene: THREE.Scene;
   light: THREE.RectAreaLight;
