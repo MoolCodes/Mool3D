@@ -29,6 +29,7 @@ import ParticleEngineExamples from "./plugins/particleExamples";
 import { Tween } from "./plugins/particleTween";
 import { Fog } from "./plugins/fog";
 import { Water } from "./plugins/water";
+import { Roam } from "./plugins/sceneRoam";
 
 const MAP_NAMES = [
   "map",
@@ -378,6 +379,24 @@ export class Viewer extends Params implements ViewerType {
   ) {
     particle.setValues(ParticleEngineExamples[key], ParticleExamplesParams);
     particle.initialize(this.scene);
+  }
+  /*
+   *@description: 漫游
+   *@author: yangj
+   *@date: 2023-04-04 12:33:24
+   *@return:
+   */
+  initRoam(object: any, runCallback: FnParamsReturn<boolean, unknown>) {
+    this.roam = new Roam({
+      scene: this.gScenes[this.sceneidx],
+      camera: this.activeCamera,
+      animate: this.animate.animateFuntion,
+      controls: this.controls.orbitControls,
+      renderer: this.renderer,
+      object,
+      runCallback: runCallback,
+    });
+    this.roam.init();
   }
   /*
    *@description: 加载场景

@@ -1,5 +1,5 @@
 import { WaterParams, WaterType, WaterShaderParams } from "../types/types";
-import { CircleGeometry } from "three";
+import { CircleGeometry, Mesh } from "three";
 import { Water as WaterShader } from "../shader/water";
 
 export class Water implements WaterType {
@@ -31,24 +31,28 @@ export class Water implements WaterType {
     this.animate = options.animate;
   }
   init() {
-    this.water = new WaterShader(new CircleGeometry(this.radius, 32), {
-      textureWidth: this.textureWidth,
-      textureHeight: this.textureHeight,
-      waterNormals: this.texture,
-      sunDirection: this.sunPosition,
-      sunColor: this.sunColor,
-      waterColor: this.waterColor,
-      distortionScale: this.distortionScale,
-      fog: (this.scene as THREE.Scene).fog !== undefined,
-    });
-    this.water.rotation.x = -Math.PI / 2;
-    this.water.position.copy(this.waterPosition);
-    this.scene.add(this.water);
+    const water = new WaterShader(
+      new Mesh(new CircleGeometry(this.radius, 32)),
+      {
+        textureWidth: this.textureWidth,
+        textureHeight: this.textureHeight,
+        waterNormals: this.texture,
+        sunDirection: this.sunPosition,
+        sunColor: this.sunColor,
+        waterColor: this.waterColor,
+        distortionScale: this.distortionScale,
+        fog: (this.scene as THREE.Scene).fog !== undefined,
+      }
+    );
+    this.water = water;
+    this.water.mesh.rotation.x = -Math.PI / 2;
+    this.water.mesh.position.copy(this.waterPosition);
+    this.scene.add(this.water.mesh);
     this.animate.push(() => {
       (this.water as any).material.uniforms["time"].value += this.time;
     });
   }
   destroy() {
-    this.scene.remove(this.water);
+    this.scene.remove(this.water.mesh);
   }
 }

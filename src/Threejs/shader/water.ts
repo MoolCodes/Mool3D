@@ -20,16 +20,15 @@ import {
  * http://29a.ch/ && http://29a.ch/slides/2012/webglwater/ : Water shader explanations in WebGL
  */
 
-class Water extends Mesh {
+class Water {
   isWater: boolean;
+  mesh: THREE.Mesh;
   material: THREE.ShaderMaterial;
-  constructor(geometry, options: any = {}) {
-    super(geometry);
-
+  constructor(mesh, options: any = {}) {
     this.isWater = true;
 
-    const scope = this;
-
+    const scope = mesh;
+    this.mesh = mesh;
     const textureWidth =
       options.textureWidth !== undefined ? options.textureWidth : 512;
     const textureHeight =

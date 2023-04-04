@@ -17,6 +17,7 @@ import {
   PointLightType,
   ViewerSpot,
   ViewerRectArea,
+  ViewerRoam,
 } from "../types/types";
 import { Clock } from "three";
 
@@ -54,6 +55,7 @@ export class Params {
   spriteGroup: THREE.Object3D[];
   fog: ViewerFog; //雾
   water: ViewerWater; //水
+  roam: ViewerRoam; //漫游
   options: ViewerParams; //实例参数
   constructor(options: ViewerParams) {
     this.options = options;

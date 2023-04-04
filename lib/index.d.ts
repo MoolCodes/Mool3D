@@ -25,6 +25,7 @@ export declare class Viewer extends Params implements ViewerType {
     initParticleEngine(particle: ParticleEngineType, mugen: boolean): ParticleEngineType;
     getParticleTween(times: number[], values: number[]): ParticleTween;
     setParticleMode(particle: ParticleEngineType, key: ParticleKeys, ParticleExamplesParams: ParticleExamplesParams): void;
+    initRoam(object: any, runCallback: FnParamsReturn<boolean, unknown>): void;
     setScene(index: number, callback: Fn<any>): void;
     flyTo(option: FlyToParams): void;
     destroy(): void;

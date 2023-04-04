@@ -94,7 +94,7 @@ export class Roam implements RoamType {
    *@date: 2023-03-22 13:46:03
    *@return:
    */
-  loadColliderEnvironment() {
+  private loadColliderEnvironment() {
     new Box3().setFromObject(this.scene);
     this.scene.updateMatrixWorld(true);
     const toMerge = {};
@@ -183,7 +183,7 @@ export class Roam implements RoamType {
    *@date: 2023-03-22 13:46:20
    *@return:
    */
-  loadplayer() {
+  private loadplayer() {
     this.player = new Mesh(
       new RoundedBoxGeometry(0.5, 5.5, 0.5, 17, 0.5),
       new MeshStandardMaterial()
@@ -208,7 +208,7 @@ export class Roam implements RoamType {
    * @author: yangj (yangjia@fjxhx.cc)
    * @createDate: 2022/3/1
    */
-  windowEvent() {
+  private windowEvent() {
     const that = this;
     // window.addEventListener(
     //   'resize',
@@ -317,7 +317,7 @@ export class Roam implements RoamType {
    *@date: 2023-03-22 13:58:01
    *@return:
    */
-  render() {
+  private render() {
     const delta = Math.min(this.clock.getDelta(), 0.1);
     if (
       (this.rgtPressed ||
@@ -353,7 +353,7 @@ export class Roam implements RoamType {
    *@date: 2023-03-22 13:56:29
    *@return:
    */
-  updatePlayer(delta) {
+  private updatePlayer(delta) {
     this.playerVelocity.y += this.playerIsOnGround
       ? 0
       : delta * this.params.gravity;

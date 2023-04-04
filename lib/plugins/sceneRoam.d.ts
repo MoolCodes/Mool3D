@@ -28,20 +28,20 @@ export declare class Roam implements RoamType {
     angle: number;
     constructor(options: any);
     init(): void;
-    loadColliderEnvironment(): void;
-    loadplayer(): void;
+    private loadColliderEnvironment;
+    private loadplayer;
     /**
      * @description
      * @author: yangj (yangjia@fjxhx.cc)
      * @createDate: 2022/3/1
      */
-    windowEvent(): void;
+    private windowEvent;
     /**
      * @description 重置
      * @author: yangj (yangjia@fjxhx.cc)
      * @createDate: 2022/3/1
      */
     reset(): void;
-    render(): void;
-    updatePlayer(delta: any): void;
+    private render;
+    private updatePlayer;
 }

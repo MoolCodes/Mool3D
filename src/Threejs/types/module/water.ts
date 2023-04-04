@@ -6,7 +6,8 @@ export interface WaterType {
 }
 export type WaterShaderParams = {
   material: THREE.ShaderMaterial;
-} & THREE.Mesh;
+  mesh: THREE.Mesh;
+};
 
 export type ViewerWater = WaterType;
 export interface WaterParams {

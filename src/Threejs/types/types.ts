@@ -34,7 +34,7 @@ import { DirectionalType, ViewerDirectional } from "./module/directional";
 import { PointLightType } from "./module/point";
 import { SpotType, ViewerSpot } from "./module/spot";
 import { RectAreaType, ViewerRectArea } from "./module/rectArea";
-import { RoamType } from "./module/sceneRoam";
+import { RoamType, ViewerRoam } from "./module/sceneRoam";
 export {
   AnimateType,
   ViewerAnimate,
@@ -90,4 +90,5 @@ export {
   RectAreaType,
   ViewerRectArea,
   RoamType,
+  ViewerRoam,
 };
