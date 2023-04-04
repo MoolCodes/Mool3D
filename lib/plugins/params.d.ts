@@ -1,4 +1,4 @@
-import { ViewerParams, ViewerAnimate, ViewerCamera, ViewerAmbient, ViewerEvent, ViewerModel, ViewerFog, ViewerControl, ViewerSky, ViewerEnvironment, ViewerSource, ViewerParade, ViewerWater, ViewerSkyLight, ViewerDirectional, PointLightType, ViewerSpot, ViewerRectArea } from "../types/types";
+import { ViewerParams, ViewerAnimate, ViewerCamera, ViewerAmbient, ViewerEvent, ViewerModel, ViewerFog, ViewerControl, ViewerSky, ViewerEnvironment, ViewerSource, ViewerParade, ViewerWater, ViewerSkyLight, ViewerDirectional, PointLightType, ViewerSpot, ViewerRectArea, ViewerRoam } from "../types/types";
 export declare class Params {
     clock: THREE.Clock;
     animate: ViewerAnimate;
@@ -27,6 +27,7 @@ export declare class Params {
     spriteGroup: THREE.Object3D[];
     fog: ViewerFog;
     water: ViewerWater;
+    roam: ViewerRoam;
     options: ViewerParams;
     constructor(options: ViewerParams);
 }

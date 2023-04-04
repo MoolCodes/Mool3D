@@ -1,6 +1,6 @@
 {
   "name": "mool3d",
-  "version": "1.0.9",
+  "version": "1.1.1",
   "description": "threejs开源引擎",
   "type": "module",
   "main": "lib/index.js",
@@ -15,6 +15,6 @@
   "peerDependencies": {
     "@types/three": "^0.149.0",
     "axios": "^0.26.1",
-    "three": "^0.148.0"
+    "three": "^0.143.0"
   }
 }
