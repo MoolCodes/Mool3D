@@ -1,6 +1,6 @@
 {
   "name": "mool3d",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "threejs开源引擎",
   "type": "module",
   "main": "lib/index.js",

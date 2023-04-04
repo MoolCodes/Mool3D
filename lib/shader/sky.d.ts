@@ -1,4 +1,3 @@
-import { Mesh } from "three";
 /**
  * Based on "A Practical Analytic Model for Daylight"
  * aka The Preetham Model, the de facto standard analytic skydome model
@@ -12,8 +11,9 @@ import { Mesh } from "three";
  *
  * Three.js integration by zz85 http://twitter.com/blurspline
  */
-declare class Sky extends Mesh {
+declare class Sky {
     isSky: boolean;
+    material: any;
     constructor();
 }
 export { Sky };
